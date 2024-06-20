@@ -41,8 +41,8 @@ pour quitter le programme utiliser ```CTRL+C``` et pour quitter la capture vidé
 
 * Détection de souris :
 
-![Détection d'objets - Exemple 1](help/images/detect_mouse.png)
+![Détection d'objets - Exemple 1](help/images/detect_mouse.PNG)
 
 * Détection d'ordinateur : 
 
-![Détection d'objets - Exemple 2](help/images/laptop_detect.png)
+![Détection d'objets - Exemple 2](help/images/laptop_detect.PNG)

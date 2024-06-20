@@ -6,10 +6,9 @@ class ObjectDetector:
     def __init__(self, model_path, names_path):
         """
         Initialise le détecteur d'objets avec le modèle yolov5 et les noms de classes.
-        
         les arguments :
-        - model_path (str): Chemin vers le fichier de poids du modèle YOLOv5
-        - names_path (str): Chemin vers le fichier contenant les noms des classes
+        - model_path: Chemin vers le fichier de poids du modèle YOLOv5
+        - names_path: Chemin vers le fichier contenant les noms des classes
         """
         # Charge le modèle yolov5 depuis le chemin spécifié
         self.model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path, force_reload=True)
@@ -42,7 +41,7 @@ class ObjectDetector:
             if label in self.target_classes and confidence > 0.5:
                 x1, y1, x2, y2 = int(pred['xmin']), int(pred['ymin']), int(pred['xmax']), int(pred['ymax'])
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)  # Dessine un rectangle autour de l'objet détecté
-                cv2.putText(frame, f"{label} {confidence:.2f}", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)  # Ajoute le label et la confiance
+                cv2.putText(frame, f"{label} {confidence:.2f}", (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
                 
         return frame
 
